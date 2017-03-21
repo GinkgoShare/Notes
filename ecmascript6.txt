@@ -1,0 +1,67 @@
+__EcmaScript 6/7 (EC6/7)__
+
+What is the TC-39 committee?
+They're a committee who decides on what features get implemented into each EcmaScript specification. 
+Every new feature starts out at Stage 0 and then progresses to stage 4 where it is ready to be 
+finalized for release into the next version of EcmaScript. So every new feature begins in the experimental
+stage 0, proceeds through stages 1-3 and then gets finalized in stage 4.
+
+__Transpiling__
+
+	If you've ever worked in web development you've experienced the variation between browsers in how
+your client side JavaScript is rendered. As we move ahead in code with newer versions of EcmaScript 
+it will actual break our application because the browsers have not implemented the appropriate 
+interpreters yet. This is where transpilers such as Babel come in to transofrm our JavaScript into 
+browser friendly code. This allows us to code using all of the helpful new features from various 
+frameworks and still render that code in browser.
+	With Babel specifically you can "opt-in" to various features from experimental stages as well.
+For example, if I wanted to use a feature that was in Stage 0 of the next EcmaScript specification then 
+Babel can be configured to transform that code as well.
+
+__Scope__
+
+JavaScript is function scoped. Which means a new scope is defined at the beginning of every function. Child 
+scopes can access anything within the parent scope.
+
+// Global Scope
+var firstFunction = function () {
+  // firstFunction's Scope
+  var secondFunction = function () {
+    // secondFunction's Scope
+  };
+};
+
+__Variables__
+
+Now that we know the scoping mechanisms of the JavaScript language we can learn the new variable declarations 
+we can use in EC6.
+
+There is a new keyword now which we can use to declare our variables with, let. Using the let keyword allows 
+us to have code that is block scoped. Block scoped is anywhere we have an opening and closing curly brace. 
+This means that conditional if statements can declare a new block and variables declared with the let keyword 
+are now scoped to the afformentioned if statement.
+
+There is another new keyword to declare variables with and that is the const keyword. Variabled declared using 
+const must be defined at the time of declaration and cannot be reassigned elsewhere. This declaration, however, 
+only provides a shallow seal on an assigned object. So if we assign an object to a const variable, we cannot 
+reassign the variable later but we can assign the objects properties. So remember that the constant factor is only 
+applied to the variable type but not to any interior properties.
+
+With these new keywords a new convention is being used and that is to always default to using const. If the variable 
+should be mutable then use let. It is very rare now to be using var.
+
+__JavaScript Modules__
+
+Within any programming paradigm, modularity and components are important aspects to tackling and solving problems. 
+We want functions to perform a specific task and nothing else. Following this important point, our functions need 
+be reliable and reusable blocks of code that will make up our solution. This concept stays true when we begin to 
+define larger scale components to an application. Some functions can be grouped with other functions that serve 
+similar purposes. These can be grouped in regions or namespaces. Within the functional paradigm we tend to call 
+these namespaces modules. The concept important to modules and I guess namespaces as well is that the inner details 
+of your modules are abstracted from the outside perspective. We don't want to clutter up the global scope of our 
+project so we encapsulate such details while exposing the the interface which lets us interact with it. So to recap, 
+a module is really self-contained which can be added to various solutions without breaking other parts of your system.
+
+With ES6, we can import and export our modules much easier and more intuitively than before. Now we have keywords 
+import and export at our disposal.  
+
