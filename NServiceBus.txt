@@ -1,0 +1,6 @@
+__Sagas__
+
+Defining Saga
+	- Saga is a generic class that takes a user defined type to maintain the state of the saga. This is persisted along the way.
+	- Implementing the generic interface, IAmStartedByMesages<>, which takes the message type
+	- Sagas don't have to end, Call MarkAsComplete() to complete the saga and throw away the data object in the storage

@@ -62,6 +62,28 @@ of your modules are abstracted from the outside perspective. We don't want to cl
 project so we encapsulate such details while exposing the the interface which lets us interact with it. So to recap, 
 a module is really self-contained which can be added to various solutions without breaking other parts of your system.
 
-With ES6, we can import and export our modules much easier and more intuitively than before. Now we have keywords 
-import and export at our disposal.  
+Once we have written a module we must expose its properties somehow. With ES6, we can import and export our modules 
+properties much easier and more intuitively than before using the keywords import and export. To export more than one 
+proeprty we use what are called named exports. To do this we prefix our property with the export keyword. When we want
+to import from our modules we can use named imports. These go at the top of our JavaScript file. We declare what 
+properties we want to import within a pair of curly braces.
+
+import { add, multiply } from "./math"
+
+We can import all properties of a module with the * character and assign the return value to a variable.
+
+import * as math from "./math"
+
+We can also specify one binding to be the default export of our module. This can be imported without any surrounding 
+braces.
+
+import math from "./math" // as long as the math binding is the default export
+
+The same features apply to all importing styles. We can import a default binding and assign it to a renamed variable. 
+We can also import a default binding and other exported bindings using braces.
+
+import doAllTheMath, { add } from "./math"
+
+Exported bindings can include variables, functions and classes.
+
 
