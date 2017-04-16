@@ -1,0 +1,50 @@
+Why do you need it?
+
+What is Redux?
+
+Managing state in your application. What is state?
+  - Dynamic data is a state in your application. Most bugs come from mismanaging state 
+    within your application
+  - Components manage state from parent components and their own. What Redux does is it 
+    takes all of our state out of components and puts it in a state tree independent 
+    from our components
+  - We can easily debug this because we can now take snapshots of our state tree at 
+    the time we encountered our error
+  - In Redux, all of your state lives in one place called a Single State Tree (or a store).
+    Your components can still have their own state, but usually your state lives in Redux. 
+    A good compromise is all application state lives in Redux and all UI state lives in your 
+    component's state - but it is opinionated.
+
+__Actions__
+
+Redux actions are an object that describe the specific change we want to make to an 
+application's state. These actions contain the specific details of our operation. Therefore, 
+an action is an object which describes what sort of transformation you want to make to your 
+state.
+
+We can use action creators that are like factory methods to produce our actions. When you 
+wrap an action in a function in order to make it more portable, that's called an "Action 
+Creator".
+
+Actions must have a type property to specify the type. It is a required property to 
+meet the specifications of an action structure. You can have any other properties you 
+want. Therefore, the nly property that your action object must have is "type". The rest 
+of the structure is up to you.
+
+__Reducers__
+
+React reducers will receive the action and modify the state by creating a new copy 
+of the current state, modifying that state and then assigning the new copy to our 
+state.
+
+Reducers will receive the current state and the action as arguments.
+  - function reducer(state, action) {}
+We then switch on the type of action received
+  - function reducer(state, action) {
+      switch(action.type) {
+        case "SUBMIT_USER":
+          return Object.assign({}, state, {
+            user: action.user
+          })
+      }
+    }

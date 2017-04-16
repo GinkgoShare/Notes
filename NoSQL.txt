@@ -1,0 +1,23 @@
+__Modeling NoSQL DBs__
+
+When trying to optimize our database for speed or correctness. We shift towards either 
+end of the spectrum. Denormalized data is optimized for speed. Normalized data is 
+optimized for correctness. NoSQL databases allow us to optimize our databases by 
+finding the right fit for the applications purposes. In the end what you get is not 
+perfect but is (hopefully) the appropriate fit gor the use case of your application.
+
+Some things to think about during the engineering process for your database schema
+  - There is no perfect solution, only tradeoffs
+  - Repeating data is okay, but
+  - Try and keep your model shallow. It can get overly complicated when you start 
+    to continually nest data within data.
+
+So when do I want to repeat data and when do I want to use a top level data entry 
+point?
+  - Of course, it depends. How dynamic is your data? If you have data that is going to 
+    change in value quite often then it is usally better if you can query it at a top 
+    level endpoint. The contrary would be to repeat this data accross multiple datasets 
+    and project any changes throughout them. This can be complicated to maintain. If 
+    you don't then your data will become out of sync very fast. 
+  - If your data will not get updated very often then by all means duplicate it
+

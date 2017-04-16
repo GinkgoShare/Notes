@@ -86,4 +86,64 @@ import doAllTheMath, { add } from "./math"
 
 Exported bindings can include variables, functions and classes.
 
+__Lambdas__
+
+Lambda functions do not create a new context. This a a big benefit because sometimes we have trouble binding our "this" 
+property to the function. Well if our function doesn't create a new context, the "this" keyword is still bound to the 
+outside scope of the function.
+
+Features:
+  - They're anonymous
+  - They don't create their own context
+  - They're more concise
+  - They can be assigned to a variable
+  
+__String Concatenation__
+
+A new feature called Template Strings or Template Literals allows us to build strings using placeholder syntax instead 
+of using the concatenation operator '+'.
+
+Template Strings also support multi line strings.
+
+The syntax requires you to use backticks '`' not quotation marks '"'. Your variables must also be wrapped in "${}".
+
+__Default Parameters__
+
+ES2015 now allows default parameters to be set. A nice feature is that they can be set in any order of the parameter 
+list.
+
+function doSomething(thing, wait = 1000, somethingElse) {  }
+
+__Concise Objects__
+
+Objects can be returned as a list of variable names { username, email } instead of { username: username, email: email }
+
+__Async/Await in React__
+
+The entire foundation for async/await is promises. Every async function you write will return a promise and every 
+single thing you await will ordinarily be a promise. This is different from the callback pattern.
+
+What is a promise?
+A promise is just a JS object which contains anther object. To access the data in a promise you use the .then() 
+function. To catch errors from the promise chain you use the .catch() function. A promise is usuallt for future date. 
+You can await any promise you want. Promises are dispatched automatically upon invoking the promise function. Promises 
+are more about code structure and flow than just things you pass around that represent an asynchronous value.
+
+Within a then() function you can only do one of three things correctly:
+  1) return another promise (return is crucial otherwise any chained promised would just receive undefined)
+  2) return a synchronous value (or undefined)
+  3) throw a synchronous error
+
+A good idea is to always return or throw from inside a then() function. Always pass a function to then()
+
+Awaiting pauses the execution or your function until the value from your promise is available. Within an async 
+function you wou;d use the syncronous coding style of try/catch blocks. Async function do not implicitly await 
+themselves. You must explicitly call await or you'll get a promise instead of the value you expect assigned to your  
+variable. There are benefits of explicitly manipulating promises themselves like memoizing promises.
+
+If you want to await multiple async calls you must await a Promise.all([func1(), func2()]) call and assign it into 
+a named destructing variable list. 
+
+
+
 
