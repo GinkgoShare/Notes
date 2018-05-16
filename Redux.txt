@@ -48,3 +48,8 @@ We then switch on the type of action received
           })
       }
     }
+
+Redux breakdown:
+  1) All state lives in a single state tree
+  2) An action describes how you want to change the state in response to some event
+  3) Reducers receive actions and do the actual implementation of changing the state

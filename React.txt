@@ -1,0 +1,27 @@
+One thing a lot of developers who use React don’t realize is that you need to explicitly 
+tell React whether you’re building for production as React will, by default, be in 
+development mode. If you don't, you're losing out on a roughly 33% decrease in your 
+build size. One major difference between React in Development mode vs Production mode is 
+PropTypes. It doesn’t make sense to do PropType checking in production since they’re 
+relatively slow and are used to make sure developers pass the correct props to a 
+component. Production mode ignores all propTypes. Along with propType, React also 
+includes some test helpers which aren’t needed for production builds either. So enough 
+with the why and on to the how.
+
+In order to set React to production mode, you need to set the environment variable 
+"NODE_ENV" to "production".
+
+Luckily this is a breeze with Webpacks' definePlugin method since definePlugin allows 
+us to do exactly what React needs, set "NODE_ENV" to "production".
+
+The only thing you have to do is add this code to your plugins array on your 
+webpack.config.js object you're exporting.
+
+plugins: [
+  new webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: JSON.stringify('production')
+    }
+  })
+]
+

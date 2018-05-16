@@ -144,6 +144,13 @@ variable. There are benefits of explicitly manipulating promises themselves like
 If you want to await multiple async calls you must await a Promise.all([func1(), func2()]) call and assign it into 
 a named destructing variable list. 
 
+__this keyword__
+
+- Implicit binding
+- Explicit binding
+- new binding
+- window binding
+
 
 
 

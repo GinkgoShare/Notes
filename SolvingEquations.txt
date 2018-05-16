@@ -1,0 +1,25 @@
+__Mathematical Symbols__
+
+(=) => The equality symbol means that all that is to the left of = is equal to all that is 
+right of =. You can make changes to either side of the equation, but in order to maintain 
+the equality of the equation you must make the changes to the opposing side. "For every 
+change you apply to the left side of the equation, you must apply the same change to the 
+right side of the equation."
+
+One change we can make to an equation is to undo the effects of an operation. If one side 
+of the equation has a +4, I can undo this operation by -4. In order to maintain the equality 
+of the equation I must also -4 from the other side of the = symbol. This is called applying 
+the inverse.
+
+|x| => This notation stands for the absolute value of x. The absolute value of something 
+basically means to ignore the sign of the value. So the absolute value of -5 is 5. |-5| = 5.
+
+__Numbers__
+
+Number classifications:
+
+  - The natural numbers: N = { 0, 1, 2, 3, 4, 5, 6, 7, ... }
+  - The integers: Z = { ..., -3, -2, -1, 0, 1, 2, 3, ... }
+  - The rational numbers: Q = { 5/3, 22/7, 1.5, 0.125, -7, ... }
+  - The real numbers: R = { -1, 0, 1, √2, e, π, 4.94..., ... }
+  - The complex numbers: C = { -1, 0, 1, i, 1+i, 2+3i, ... }
